@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	
+		<title>jquery.dragToEnvoke Demo</title>
+		
+	</head>
+		
+	<body>
+	
+		<div id="page-container">
+		
+			<style type="text/css">
+				
+				body {
+					font-family: "Georgia", serif;
+					line-height: 1.4em;
+					color: #222;
+					width: 800px;
+					margin: 0 auto;
+				}
+				
+				h1, h2 {
+					text-align: center;
+					margin: 40px;
+					font-weight: normal;
+					text-transform: uppercase;
+				}
+				
+				p {
+				
+					text-align: center;
+				}
+				
+				
+				.drag-range {
+					position: relative;
+					margin: 100px auto;
+					width: 90px;
+					height: 30px;
+					background: #444;
+					background: rgba(0,0,0,0.4);
+					
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+					
+					border: 1px solid #444;
+					
+					-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3), 0px 0px 5px rgba(0,0,0,0.3),
+															inset 0px 1px 0px rgba(0,0,0,0.2), inset 0px -1px 0px rgba(255,255,255,0.5);
+															
+					-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3), 0px 0px 5px rgba(0,0,0,0.3),
+															inset 0px 1px 0px rgba(0,0,0,0.2), inset 0px -1px 0px rgba(255,255,255,0.5);
+															
+					box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3), 0px 0px 5px rgba(0,0,0,0.3),
+															inset 0px 1px 0px rgba(0,0,0,0.2), inset 0px -1px 0px rgba(255,255,255,0.5);
+					
+				}
+				
+				.handle {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 30px;
+					width: 45px;
+					background: #FFF;
+					background: rgba(200,200,200,1);
+					
+					cursor: pointer;
+					
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+					
+					-webkit-box-shadow: inset 0px 0px 5px rgba(255,255,255,0.3), 0px 0px 5px rgba(0,0,0,0.3),
+															inset 0px 1px 0px rgba(0,0,0,0.2), inset 0px -1px 0px rgba(255,255,255,0.5);
+															
+					-moz-box-shadow: inset 0px 0px 5px rgba(255,255,255,0.3), 0px 0px 5px rgba(0,0,0,0.3),
+															inset 0px 1px 0px rgba(0,0,0,0.2), inset 0px -1px 0px rgba(255,255,255,0.5);
+															
+					box-shadow: inset 0px 0px 5px rgba(255,255,255,0.3), 0px 0px 5px rgba(0,0,0,0.3),
+															inset 0px 1px 0px rgba(0,0,0,0.2), inset 0px -1px 0px rgba(255,255,255,0.5);
+					
+				}
+				
+				pre {
+					border: 1px dashed rgba(200,100,50,0.5);
+					background-color: #DDD;
+					width: 400px;
+					margin: 0 auto;
+					padding: 20px;
+					font-family: "Monaco", monospace;
+				}
+				
+				code {
+					font-family: "Monaco", monospace;
+					font-size: 12px;
+				}
+			
+			</style>
+			
+			<h1>Draggy Switch is: <span>Off</span></h1>
+			
+			<div class="drag-range">
+			</div>
+			
+			<h2>Usage:</h2>
+<pre><code>$(".drag-range").dragToEnvoke({
+	onFunc : function() {
+		$("h1 span").text("On");
+	},
+	offFunc : function() {
+		$("h1 span").text("Off");
+	}
+});</code></pre>
+
+			<p>See source for all options.</p>
+		
+		</div>
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script type="text/javascript" src="../jquery.dragToEnvoke.js"></script>
+		<script type="text/javascript">
+			$(".drag-range").dragToEnvoke({
+				onFunc : function() {
+					$("h1 span").text("On");
+				},
+				offFunc : function() {
+					$("h1 span").text("Off");
+				}
+			});
+		</script>
+		
+	</body>
+</html>
