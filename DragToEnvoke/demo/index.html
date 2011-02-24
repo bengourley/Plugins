@@ -16,26 +16,24 @@
 					font-family: "Georgia", serif;
 					line-height: 1.4em;
 					color: #222;
-					width: 800px;
-					margin: 0 auto;
+					width: 500px;
+					margin: 0 auto 100px;
 				}
 				
 				h1, h2 {
-					text-align: center;
-					margin: 40px;
+					margin: 40px 0px 10px 0px;
 					font-weight: normal;
 					text-transform: uppercase;
 				}
 				
 				p {
-				
-					text-align: center;
+					margin: 10px 0px 0px 0px;
 				}
 				
 				
 				.drag-range {
 					position: relative;
-					margin: 100px auto;
+					margin: 50px auto;
 					width: 90px;
 					height: 30px;
 					background: #444;
@@ -87,8 +85,6 @@
 				pre {
 					border: 1px dashed rgba(200,100,50,0.5);
 					background-color: #DDD;
-					width: 400px;
-					margin: 0 auto;
 					padding: 20px;
 					font-family: "Monaco", monospace;
 				}
@@ -101,6 +97,8 @@
 			</style>
 			
 			<h1>Draggy Switch is: <span>Off</span></h1>
+			<h2>Description:</h2>
+			<p>A draggable UI switch element. Works in all browsers including Mobile Safari. Takes optional callbacks to fire when switching on/off, can be set to run once. Listens for a custom event to fire so it can be reset asynchronously.</p>
 			
 			<div class="drag-range">
 			</div>
