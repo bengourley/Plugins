@@ -172,7 +172,8 @@
         balancePoint : 0.9,
         runOnce : false,
         handleText : "",
-        onTest : function() { return true; }
+        onTest : function() { return true; },
+        enableAutoSwitch : true
     };
 
     $.fn.dragToEnvoke = function(options){
