@@ -1,4 +1,4 @@
-# DragToEnvoke #
+# DragToInvoke #
 simple jQuery plugin to create draggable switches.
 
 ## How it works ##
@@ -6,7 +6,7 @@ simple jQuery plugin to create draggable switches.
 The plug-in requires a single element to get started. This element should have relative positioning, a width set and no padding. This defines the draggable area.
 The jQuery plugin should be called on this element like so:
 
-		$("#my-el").dragToEnvoke({ ... });
+		$("#my-el").dragToInvoke({ ... });
 
 The plugin adds a child element which becomes the handle. This has a class of handle and no styles added by the javascript so it can be styled in your css; it just needs absolute positioning and a width set to be functional.
 

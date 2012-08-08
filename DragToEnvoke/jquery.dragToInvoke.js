@@ -1,11 +1,11 @@
 /**
- *	dragToEnvoke is a jQuery plugin UI element.
+ *	dragToInvoke is a jQuery plugin UI element.
  *	It is a draggable switch between two states,
  *	with callbacks available at each end.
  */
 (function($,undefined){
 
-    $.dragToEnvoke = function(el, parent, options){
+    $.dragToInvoke = function(el, parent, options){
     	
 	    var base      =    this,	     // Named reference to 'this'
 					state			= 	 false;			 // Set starting state
@@ -16,13 +16,13 @@
       base.parent   =    parent; 		 // ..DOM versions of parent
 
       // Add Reverse reference to the DOM object
-      base.$el.data("dragToEnvoke", base);
+      base.$el.data("dragToInvoke", base);
 			
 			
 			// Initialisation function
       base.init = function(){
       
-        base.options = $.extend({},$.dragToEnvoke.defaultOptions, options);
+        base.options = $.extend({},$.dragToInvoke.defaultOptions, options);
 				
 				base.$el.html(base.options.handleText);
         
@@ -30,12 +30,12 @@
         base.$parent.bind("mousedown", function(e) { e.preventDefault(); });
         
         // Bind mousedown to element
-        base.$el.bind("mousedown.dragToEnvoke touchstart.dragToEnvoke", base.startDrag);
+        base.$el.bind("mousedown.dragToInvoke touchstart.dragToInvoke", base.startDrag);
         
         // Bind reset events
-        base.$parent.bind("reset.dragToEnvoke", function() {
+        base.$parent.bind("reset.dragToInvoke", function() {
         	base.off();
-        	base.$el.bind("mousedown.dragToEnvoke touchstart.dragToEnvoke", base.startDrag);
+        	base.$el.bind("mousedown.dragToInvoke touchstart.dragToInvoke", base.startDrag);
         });
           
           
@@ -51,8 +51,8 @@
 				
 				base.clickStartTime = new Date();
 				
-				$(document).bind("mousemove.dragToEnvoke touchmove.dragToEnvoke", base.updateDrag);
-				$(document).bind("mouseup.dragToEnvoke touchend.dragToEnvoke", base.endDrag);
+				$(document).bind("mousemove.dragToInvoke touchmove.dragToInvoke", base.updateDrag);
+				$(document).bind("mouseup.dragToInvoke touchend.dragToInvoke", base.endDrag);
 			
 			};
 
@@ -93,7 +93,7 @@
 			
 				e.preventDefault();
 				
-				$(document).unbind("mousemove.dragToEnvoke touchmove.dragToEnvoke mouseup.dragToEnvoke touchend.dragToEnvoke");
+				$(document).unbind("mousemove.dragToInvoke touchmove.dragToInvoke mouseup.dragToInvoke touchend.dragToInvoke");
 				
 				if (base.options.enableAutoSwitch && (new Date() - base.clickStartTime < 150) ) {
 					base.autoSwitch();
@@ -134,8 +134,8 @@
 	
 					if (base.options.runOnce) {
 						base.$el.addClass("disabled");
-						base.$el.unbind("mousedown.dragToEnvoke touchstart.dragToEnvoke");
-						base.$parent.unbind("click.dragToEnvoke");
+						base.$el.unbind("mousedown.dragToInvoke touchstart.dragToInvoke");
+						base.$parent.unbind("click.dragToInvoke");
 					}
 					
 				} else {
@@ -165,7 +165,7 @@
       
     };
 
-    $.dragToEnvoke.defaultOptions = {
+    $.dragToInvoke.defaultOptions = {
         onFunc : function() { },
         offFunc : function() { },
         returnTime : 100,
@@ -176,7 +176,7 @@
         enableAutoSwitch : true
     };
 
-    $.fn.dragToEnvoke = function(options){
+    $.fn.dragToInvoke = function(options){
       return this.each(function(){
       	
       	// Add a handle
@@ -185,7 +185,7 @@
       	}).appendTo(this);
       	
       	// Add the functionality
-        (new $.dragToEnvoke(handle, this, options));
+        (new $.dragToInvoke(handle, this, options));
         
         });
     };
