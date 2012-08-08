@@ -95,7 +95,7 @@
 				
 				$(document).unbind("mousemove.dragToEnvoke touchmove.dragToEnvoke mouseup.dragToEnvoke touchend.dragToEnvoke");
 				
-				if (new Date() - base.clickStartTime < 150 ) {
+				if (base.options.enableAutoSwitch && (new Date() - base.clickStartTime < 150) ) {
 					base.autoSwitch();
 					
 				} else {
