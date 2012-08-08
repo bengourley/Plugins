@@ -54,6 +54,7 @@ If you like, you add text to your handle element with this option.
 A function to be executed when the handle is moved to the on position. This function should return a boolean value. If it returns true, the handle will remain in the on position and proceed to execute the onFunc callback. If the return value is false, the handle will return to the off state and the offFunc callback will be executed.
 
 * `enableAutoSwitch` (default = `true`)
+
 If enabled (set to `true`) a touch / click event lasting less than 150ms will automatically toggle the switch. If set to `false`, one can only trigger the switch by dragging it. In some cases this helps avoiding accidental toggle of switch.
 
 ## Usage ##
