@@ -1,5 +1,7 @@
-How it works
-=================
+# DragToEnvoke #
+simple jQuery plugin to create draggable switches.
+
+## How it works ##
 
 The plug-in requires a single element to get started. This element should have relative positioning, a width set and no padding. This defines the draggable area.
 The jQuery plugin should be called on this element like so:
@@ -14,8 +16,7 @@ If the mouse/touch action lasts more than 150ms, the plugin treats this input as
 
 Please note that this "autoswitch" feature can be disabled by setting the `enableAutoSwitch` option to false
 
-Available Options
-==================
+## Available Options ##
 
     {
       onFunc : function ($handle, $dragArea) { ... },
@@ -28,7 +29,7 @@ Available Options
       enableAutoSwitch :true
     }
 
-* `onFunc and offFunc`
+* `onFunc` and `offFunc`
 
 These are callback functions to be executed when the switch is move to on/off states respectively. They are passed the drag elements for convenience (you don't have to put this in your callback signature if you don't want to use it)
 
@@ -52,5 +53,8 @@ If you like, you add text to your handle element with this option.
 
 A function to be executed when the handle is moved to the on position. This function should return a boolean value. If it returns true, the handle will remain in the on position and proceed to execute the onFunc callback. If the return value is false, the handle will return to the off state and the offFunc callback will be executed.
 
-== Usage
-Feel free to use the plugin on any project – no attribution required, just leave a comment here if you do. 
+* `enableAutoSwitch` (default = `true`)
+If enabled (set to `true`) a touch / click event lasting less than 150ms will automatically toggle the switch. If set to `false`, one can only trigger the switch by dragging it. In some cases this helps avoiding accidental toggle of switch.
+
+## Usage ##
+Feel free to use the plugin on any project – no attribution required, just leave a comment here if you do.
